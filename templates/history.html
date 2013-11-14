@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+    {% for page in pages %}
+        
+        
+        <div class="row">
+            <div class="col-md-5">{{page.created.strftime('%c')}}</div>
+            <div class="col-md-5"><b>{{page.content}}</b></div>
+            <div class="col-md-1"><a href="{{page.title}}?v={{page.key().id()}}">view</a></div>
+            <div class="col-md-1"><a href="/_edit{{page.title}}?v={{page.key().id()}}">edit</a></div>
+        </div>
+        
+        <hr>
+    {% endfor %}
+{% endblock %}
